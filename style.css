@@ -188,6 +188,15 @@ a:hover {
     position: relative;
 }
 
+.hero-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
 .hero-label {
     font-family: var(--mono);
     font-size: 0.8rem;
