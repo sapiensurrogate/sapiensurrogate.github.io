@@ -161,12 +161,39 @@ a:hover {
     display: flex;
 }
 
+/* === Homepage Hero Banner === */
+.home-hero {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    overflow: hidden;
+    margin-top: 64px;
+}
+
+.home-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+}
+
 /* === Hero === */
 .hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 2rem 6rem;
+    padding: 3rem 2rem 6rem;
     position: relative;
 }
 
@@ -561,9 +588,12 @@ a:hover {
         display: flex;
     }
 
+    .home-hero {
+        height: 400px;
+    }
+
     .hero {
-        min-height: auto;
-        padding: 7rem 1.5rem 4rem;
+        padding: 2rem 1.5rem 4rem;
     }
 
     .hero h1 {
