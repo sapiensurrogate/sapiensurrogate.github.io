@@ -108,10 +108,42 @@
     color: var(--accent-hover);
 }
 
+/* === Hero Banner === */
+.post-hero {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-top: 64px;
+}
+
+.post-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.post-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+}
+
 /* === Blog Post (single) === */
 .post-header {
-    padding: 8rem 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     text-align: center;
+}
+
+.post-header--no-hero {
+    padding-top: 8rem;
 }
 
 .post-header-inner {
@@ -255,6 +287,117 @@
     width: 10rem;
 }
 
+/* Code blocks in blog posts */
+.post-content-inner pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.post-content-inner code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
+.post-content-inner pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: var(--text);
+    font-size: 1em;
+}
+
+/* Check steps (numbered instruction blocks) */
+.check-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    transition: border-color 0.3s;
+}
+
+.check-step:hover {
+    border-color: var(--accent);
+}
+
+.check-step-num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.check-step h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 0.75rem;
+}
+
+.check-step p,
+.check-step li {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.check-step ul {
+    margin: 0.5rem 0 0.5rem 1.25rem;
+}
+
+.check-step li {
+    margin-bottom: 0.35rem;
+}
+
+/* Callout / highlight box */
+.callout {
+    border-left: 3px solid var(--green);
+    background: var(--green-dim);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.callout p {
+    color: var(--text);
+    margin-bottom: 0;
+}
+
+/* Post card with thumbnail */
+.post-card-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.post-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.post-card:hover .post-card-thumb img {
+    transform: scale(1.03);
+}
+
 /* Post footer / discuss links */
 .post-discuss {
     max-width: 700px;
@@ -340,11 +483,19 @@
         padding: 1.5rem 1.5rem 4rem;
     }
 
+    .post-hero {
+        height: 200px;
+    }
+
     .post-content {
         padding: 1.5rem 1.5rem 3rem;
     }
 
     .post-discuss {
         padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .check-step {
+        padding: 1.25rem 1.25rem;
     }
 }
